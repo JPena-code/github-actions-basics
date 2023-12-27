@@ -1,0 +1,13 @@
+name: Contexts
+run-name: Contexts of Github
+on: push
+jobs:
+  check-main:
+    if: ${{ github.ref != 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+            echo "Running action in $GITHUB_REF"
+            echo This is the greeting "${{ env.local-env }}"
+        env:
+            local-env: Hellow env in workflow file
