@@ -12,4 +12,4 @@ jobs:
         env:
             local-env: Hellow env in workflow file
       - name: print default vars
-        run: echo ${{ fromJson(vars) }}
+        run: echo ${{ toJson(vars) }}
