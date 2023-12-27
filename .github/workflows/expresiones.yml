@@ -3,25 +3,25 @@ run-name: Learning expressions
 on:
   workflow_dispatch:
     inputs:
-      edad:
-        description: 'Edad'
+      age:
+        description: 'Age'
         required: true
         type: number
-      nombre:
-        description: 'Tu nombre'
+      name:
+        description: 'What is your name?'
         required: true
         default: 'Julio Quintero'
         type: string
 jobs:
-  mayor:
-    if: ${{ inputs.edad >= 18 }}
+  adult:
+    if: ${{ inputs.age >= 18 }}
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
-        run: echo ${{ inputs.nombre }} is a Menor
+        run: echo ${{ inputs.name }} is an adult
   menor:
-    if: ${{ inputs.edad < 18 }}
+    if: ${{ inputs.age < 18 }}
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
-        run: echo ${{ inputs.nombre }} is an Adult
+        run: echo ${{ inputs.name }} is a Menor
