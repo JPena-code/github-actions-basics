@@ -11,3 +11,5 @@ jobs:
             echo This is the greeting "${{ env.local-env }}"
         env:
             local-env: Hellow env in workflow file
+      - name: print default vars
+        run: echo ${{ fromJson(vars) }}
