@@ -1,0 +1,27 @@
+name: Expresiones
+run-name: Learning expressions
+on:
+  workflow_dispatch:
+    inputs:
+      age:
+        description: 'Age'
+        required: true
+        type: number
+      name:
+        description: 'What is your name?'
+        required: true
+        default: 'Julio Quintero'
+        type: string
+jobs:
+  adult:
+    if: ${{ inputs.age >= 18 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Correr script
+        run: echo ${{ inputs.name }} is an adult
+  menor:
+    if: ${{ inputs.age < 18 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Correr script
+        run: echo ${{ inputs.name }} is a Menor
