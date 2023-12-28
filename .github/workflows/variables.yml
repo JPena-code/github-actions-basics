@@ -1,0 +1,12 @@
+name: Usign variables and secrets
+run-name: Use of variables and secrets
+on:
+  workflow_dispatch
+jobs:
+  saludo-variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greeting
+        run: |
+            echo Greetings at day ${date +%A}, ${{ vars.NAME }}
+            echo Your sensitive value from secrets ${{ secrets.SENSITIVE_VALUE }}
