@@ -8,5 +8,5 @@ jobs:
     steps:
       - name: Greeting
         run: |
-            echo Greetings at day ${date +%A}, ${{ vars.NAME }}
+            echo Greetings at day `date +%A`, ${{ vars.NAME }}
             echo Your sensitive value from secrets ${{ secrets.SENSITIVE_VALUE }}
